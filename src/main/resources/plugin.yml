@@ -1,0 +1,14 @@
+name: SpeedUHC
+version: ${project.version}
+main: net.banany.speeduhc.SpeedUHC
+api-version: 1.8
+authors: [vasc]
+description: A SpeedUHC Plugin made by vasc
+website: https://vasc.dev
+commands:
+  start:
+    description: Starts the game
+  healall:
+    description: Heals every player that is online.
+  setcounter:
+    description: Ignore. Only for testing.

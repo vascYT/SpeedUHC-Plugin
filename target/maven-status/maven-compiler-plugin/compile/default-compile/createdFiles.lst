@@ -1,0 +1,15 @@
+net\banany\speeduhc\events\antievents\onInteract.class
+net\banany\speeduhc\events\spectatorantievents\onItemPickup.class
+net\banany\speeduhc\events\antievents\onHunger.class
+net\banany\speeduhc\events\antievents\onMove.class
+net\banany\speeduhc\events\antievents\onDrop.class
+net\banany\speeduhc\ConsoleColor.class
+net\banany\speeduhc\waitingitems\kits\giveitems.class
+net\banany\speeduhc\events\spectatorantievents\onDamage.class
+net\banany\speeduhc\events\spectatorantievents\onInteract.class
+net\banany\speeduhc\events\antievents\onDamage.class
+net\banany\speeduhc\events\antievents\onInventoryClick.class
+net\banany\speeduhc\events\antievents\onRain.class
+net\banany\speeduhc\functions\winscenario.class
+net\banany\speeduhc\events\spectatorantievents\onPVP.class
+net\banany\speeduhc\events\spectatorantievents\onChat.class

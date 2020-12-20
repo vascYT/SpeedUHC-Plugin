@@ -1,0 +1,17 @@
+# SpeedUHC by vasc
+# This is the config for the speed-uhc plugin.
+
+# The world where everyone gets teleported when they join the game.
+lobby:
+  x: 0
+  y: 0
+  z: 0
+  world: world
+
+# The world where everyone gets teleported when the game starts
+farm-world: world
+
+# The text which shows in the chat before every message from the plugin
+prefix: '&eSpeedUHC &8| &7'
+
+scoreboard-title: '&e&lSpeedUHC'
