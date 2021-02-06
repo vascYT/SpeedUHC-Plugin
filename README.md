@@ -1,11 +1,11 @@
 # SpeedUHC Plugin
 
-## About
+### About
 This plugin originally meant to be for a public server, but then I decided to make it public and close the Server.
 
 If you update the plugin you have to delete the config.yml file in the SpeedUHC directory for now.
 
-## Features
+### Features
 - Start command
 - 2 Win scenarios: 1. TNT (permission: speeduhc.tnt), 2. Firework (permission: speeduhc.firework)
 - A spectator
@@ -15,6 +15,6 @@ If you update the plugin you have to delete the config.yml file in the SpeedUHC 
 - Easier enchants
 - Kits (Default, Soup, Sweat, Thor, Miner)
 
-## Permissions
+### Permissions
 - /start -> speeduhc.start
 - /healall -> speeduhc.healall
