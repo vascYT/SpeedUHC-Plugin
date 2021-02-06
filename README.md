@@ -14,7 +14,7 @@ This plugin originally meant to be for a public server. After the server gut shu
 - Kits (Default, Soup, Sweat, Thor, Miner)
 
 ### Updating
-Replace the .jar file and delete the ``config.yml``
+Replace the .jar file and delete the ``config.yml``.
 
 ### Permissions
 - /start -> speeduhc.start
