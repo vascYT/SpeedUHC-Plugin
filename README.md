@@ -17,6 +17,9 @@ This plugin originally meant to be for a public server. After the server gut shu
 Replace the .jar file and delete the ``config.yml``.
 
 ### Compatability
+🟢 Fully Functional
+🟠 Functional but with errors
+🔴 Not Functional
 
 | Minecraft Version  | Compatibility |
 | ------------- | ------------- |
