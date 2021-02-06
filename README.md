@@ -16,6 +16,11 @@ This plugin originally meant to be for a public server. After the server gut shu
 ### Updating
 Replace the .jar file and delete the ``config.yml``.
 
+### Compatability
+
+| Header | Title |
+| Paragraph | Text |
+
 ### Permissions
 - /start -> speeduhc.start
 - /healall -> speeduhc.healall
