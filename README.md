@@ -20,7 +20,10 @@ Replace the .jar file and delete the ``config.yml``.
 
 | Minecraft Version  | Compatibility |
 | ------------- | ------------- |
-| 1.8.x  | ✅ |
+| 1.8.x  | 🟢 |
+| 1.9.x  | 🟠 |
+| 1.10.x  | 🟠 |
+| 1.11.x  | 🟠 |
 
 ### Permissions
 - speeduhc.start (/start)
