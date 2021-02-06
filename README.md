@@ -23,5 +23,5 @@ Replace the .jar file and delete the ``config.yml``.
 | 1.8.x  | ✅ |
 
 ### Permissions
-- /start -> speeduhc.start
-- /healall -> speeduhc.healall
+- speeduhc.start (/start)
+- speeduhc.admin (/healall)
