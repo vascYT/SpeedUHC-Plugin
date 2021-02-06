@@ -1,9 +1,7 @@
 # SpeedUHC Plugin
 
 ### About
-This plugin originally meant to be for a public server, but then I decided to make it public and close the Server.
-
-If you update the plugin you have to delete the config.yml file in the SpeedUHC directory for now.
+This plugin originally meant to be for a public server. After the server gut shut down, I decided to make it public.
 
 ### Features
 - Start command
@@ -14,6 +12,9 @@ If you update the plugin you have to delete the config.yml file in the SpeedUHC 
 - Soup
 - Easier enchants
 - Kits (Default, Soup, Sweat, Thor, Miner)
+
+### Updating
+Replace the .jar file and delete the ``config.yml``
 
 ### Permissions
 - /start -> speeduhc.start
