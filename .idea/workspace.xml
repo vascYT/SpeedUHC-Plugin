@@ -34,7 +34,21 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7a8159d-d39f-4915-ac09-96834c26ef22" name="Default Changelist" comment="" />
+    <list default="true" id="f7a8159d-d39f-4915-ac09-96834c26ef22" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpeedUHC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SpeedUHC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/SpeedUHC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/SpeedUHC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/commands/healall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/commands/healall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/events/JoinLeaveDeath/onDeath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/events/JoinLeaveDeath/onDeath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/events/JoinLeaveDeath/onJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/events/JoinLeaveDeath/onJoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/events/JoinLeaveDeath/onLeave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/events/JoinLeaveDeath/onLeave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/functions/checkWin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/functions/win.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/functions/system.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/functions/system.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/var.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/banany/speeduhc/var.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,13 +63,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Users\nicov\AppData\Local\JetBrains\Toolbox\apps\IDEA-C\ch-0\202.6948.69\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectId" id="1dxU47ZXcJUKTshvHWLnIbwlXI8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -142,59 +149,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="414" y="174" width="1093" height="691" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608441735858">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="414" y="174" width="1093" height="691" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608441735858" />
-    <state x="745" y="129" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1608441701061">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="745" y="129" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608441701061" />
-    <state x="731" y="405" width="475" height="229" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1601590523299">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="731" y="405" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601590523299" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601629503944">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601629503944" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1601573834690">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601573834690" />
-    <state width="1877" height="61" key="GridCell.Tab.0.bottom" timestamp="1608441897966">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="61" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608441897966" />
-    <state width="1877" height="61" key="GridCell.Tab.0.center" timestamp="1608441897966">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="61" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608441897966" />
-    <state width="1877" height="61" key="GridCell.Tab.0.left" timestamp="1608441897966">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="61" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608441897966" />
-    <state width="1877" height="61" key="GridCell.Tab.0.right" timestamp="1608441897966">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="61" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608441897966" />
-    <state x="448" y="94" key="SettingsEditor" timestamp="1601572310715">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="448" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601572310715" />
-    <state x="784" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601571554000">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="784" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601571554000" />
-    <state x="715" y="318" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1601587622224">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="715" y="318" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601587622224" />
-    <state x="668" y="95" width="583" height="849" key="find.popup" timestamp="1601572332720">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="668" y="95" width="583" height="849" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601572332720" />
   </component>
 </project>

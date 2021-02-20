@@ -8,7 +8,9 @@ website: https://vasc.dev
 commands:
   start:
     description: Starts the game
+    permission: speeduhc.start
   healall:
     description: Heals every player that is online.
+    permission: speeduhc.admin
   setcounter:
-    description: Ignore. Only for testing.
+    description: Ignore this command.

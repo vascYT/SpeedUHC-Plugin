@@ -8,11 +8,12 @@ import net.banany.speeduhc.events.kits_use.onThorHammer;
 import net.banany.speeduhc.events.spectatorantievents.onChat;
 import net.banany.speeduhc.events.spectatorantievents.onItemPickup;
 import net.banany.speeduhc.events.spectatorantievents.onPVP;
-import net.banany.speeduhc.functions.*;
 import net.banany.speeduhc.waitingitems.kits.*;
+import org.apache.commons.io.FileUtils;
 import org.bukkit.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
@@ -52,29 +53,38 @@ public final class SpeedUHC extends JavaPlugin{
         getCommand("healall").setExecutor(new healall());
         getCommand("setcounter").setExecutor(new setCounter());
 
-        // This runs the checkwin.run() and the system.check() method every second
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () -> {
-            system.check();
-            checkWin.run();
-        }, 0L, 20L);
-
         saveDefaultConfig();
 
         instance = this; // Get instance for the static methods
+
+
+        var.lobbyworld = Bukkit.getWorld(this.getConfig().getString("lobby.world"));
+        var.lobbyspawn = new Location(var.lobbyworld, SpeedUHC.instance.getConfig().getDouble("lobby.x"), SpeedUHC.instance.getConfig().getDouble("lobby.y"), SpeedUHC.instance.getConfig().getDouble("lobby.z"), SpeedUHC.instance.getConfig().getInt("lobby.yaw"), SpeedUHC.instance.getConfig().getInt("lobby.pitch"));
+
+        // Delete old farm world
+        if (Bukkit.getWorld("farm-world") != null) {
+            Bukkit.unloadWorld("farm-world", false);
+            try {
+                FileUtils.deleteDirectory(new File("farm-world/"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        // Create new world
+        var.farmworld = Bukkit.createWorld(new WorldCreator("farm-world"));
 
         // Check maps
         if (var.lobbyworld == null || var.farmworld == null) {
             System.out.println(ConsoleColor.ANSI_RED + "[SpeedUHC] ERROR: Couldn't find one of your given world names. Please update the config." + ConsoleColor.ANSI_RESET);
             this.setEnabled(false);
         } else {
+            var.farmworld.setPVP(false);
+            var.farmworld.getWorldBorder().setCenter(0, 0);
+            var.farmworld.getWorldBorder().setSize(500);
             System.out.println(ConsoleColor.ANSI_GREEN + "[SpeedUHC] Successfully found all the given worlds." + ConsoleColor.ANSI_RESET);
         }
-
-        var.farmworld.setPVP(false);
-        var.farmworld.getWorldBorder().setCenter(0, 0);
-        var.farmworld.getWorldBorder().setSize(500);
-
-        System.out.println(ConsoleColor.ANSI_GREEN + "[SpeedUHC] The plugin has been enabled." + ConsoleColor.ANSI_RESET);
 
     }
 

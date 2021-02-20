@@ -6,7 +6,7 @@
 
     <groupId>net.banany</groupId>
     <artifactId>SpeedUHC</artifactId>
-    <version>1.0</version>
+    <version>1.3</version>
     <packaging>jar</packaging>
 
     <name>SpeedUHC</name>
@@ -16,7 +16,7 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <url>banany.net</url>
+    <url>https://vasc.dev</url>
 
     <build>
         <defaultGoal>clean package</defaultGoal>
@@ -72,6 +72,11 @@
             <artifactId>spigot-api</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.8.0</version>
         </dependency>
     </dependencies>
 </project>

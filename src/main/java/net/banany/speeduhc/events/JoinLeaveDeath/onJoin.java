@@ -18,9 +18,13 @@ public class onJoin implements Listener {
     // it will give him the waiting items. Then it will broadcast how many players are needed to start the game.
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) throws IOException {
+        system.check();
 
         // Remove all items from inventory
         e.getPlayer().getInventory().clear();
+
+        // Set to survival
+        e.getPlayer().setGameMode(GameMode.SURVIVAL);
 
         // Remove potion effects
         for (PotionEffect activePotionEffect : e.getPlayer().getActivePotionEffects()) {
@@ -38,7 +42,7 @@ public class onJoin implements Listener {
 
         // Check for update
         if (e.getPlayer().hasPermission("speeduhc.admin") && !SpeedUHC.isuptodate()) {
-            e.getPlayer().sendMessage(var.prefix + ChatColor.RED + "The plugin is out of date. Please update to a newer version here: https://www.spigotmc.org/resources/speeduhc.84390/");
+            e.getPlayer().sendMessage(var.prefix + ChatColor.RED + "The plugin is out of date. Please update to a newer version here: https://github.com/vascYT/SpeedUHC-Plugin/releases/");
         }
 
         e.getPlayer().teleport(var.lobbyspawn);

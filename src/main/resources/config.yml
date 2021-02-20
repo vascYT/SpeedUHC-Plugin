@@ -1,17 +1,20 @@
 # SpeedUHC by vasc
-# This is the config for the speed-uhc plugin.
+# Version 1.3
 
-# The world where everyone gets teleported when they join the game.
+# The lobby spawn
 lobby:
   x: 0
   y: 0
   z: 0
+  yaw: 0
+  pitch: 0
   world: world
-
-# The world where everyone gets teleported when the game starts
-farm-world: world
 
 # The text which shows in the chat before every message from the plugin
 prefix: '&eSpeedUHC &8| &7'
 
+# The kick message for all players at the end of the game
+kick-msg: '&cThe Server is restarting.'
+
+# Text at the top of the scoreboard
 scoreboard-title: '&e&lSpeedUHC'

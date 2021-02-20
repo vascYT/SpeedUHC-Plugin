@@ -37,17 +37,18 @@ public class system {
                     Bukkit.getServer().broadcastMessage(var.prefix + "The game starts in 60 seconds.");
                 } else if (var.countdown == 15) {
                     sound.broadcast(Sound.NOTE_BASS, 1, 2);
-                    Bukkit.getServer().broadcastMessage(var.prefix + "The game starts in 60 seconds.");
+                    Bukkit.getServer().broadcastMessage(var.prefix + "The game starts in 45 seconds.");
                 } else if (var.countdown == 30) {
                     sound.broadcast(Sound.NOTE_BASS, 1, 2);
-                    Bukkit.getServer().broadcastMessage(var.prefix + "The game starts in 60 seconds.");
+                    Bukkit.getServer().broadcastMessage(var.prefix + "The game starts in 30 seconds.");
                 } else if (var.countdown == 40) {
                     sound.broadcast(Sound.NOTE_BASS, 1, 2);
-                    Bukkit.getServer().broadcastMessage(var.prefix + "The game starts in 60 seconds.");
+                    Bukkit.getServer().broadcastMessage(var.prefix + "The game starts in 20 seconds.");
                 } else if (var.countdown == 50) {
                     sound.broadcast(Sound.NOTE_BASS, 1, 2);
-                    Bukkit.getServer().broadcastMessage(var.prefix + "The game starts in 60 seconds.");
-                } else if (var.countdown == 54) {
+                    Bukkit.getServer().broadcastMessage(var.prefix + "The game starts in 10 seconds.");
+                } else if (var.countdown == 51) {
+                    // Teleport to map
                     var.freeze = true;
                     for (Player player : Bukkit.getServer().getOnlinePlayers()) {
                         randomtp.tp(player);

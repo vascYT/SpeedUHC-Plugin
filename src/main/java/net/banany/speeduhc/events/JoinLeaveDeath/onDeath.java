@@ -1,8 +1,8 @@
 package net.banany.speeduhc.events.JoinLeaveDeath;
 
+import net.banany.speeduhc.functions.win;
 import net.banany.speeduhc.functions.spectator;
 import net.banany.speeduhc.var;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,7 +16,7 @@ public class onDeath implements Listener {
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent e) {
         var.players.remove(e.getEntity());
-        var.farmworld.strikeLightningEffect(e.getEntity().getLocation());
+        win.check();
         e.setDeathMessage(var.prefix + e.getEntity().getDisplayName() + ChatColor.GRAY + " (" + var.kits.get(e.getEntity()) + ") died.");
         e.getEntity().setHealth(20);
         spectator.set(e.getEntity());

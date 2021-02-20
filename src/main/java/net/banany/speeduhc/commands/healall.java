@@ -14,7 +14,7 @@ public class healall implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("healall")) {
-            if (sender.hasPermission("speeduhc.healall")) {
+            if (sender.hasPermission("speeduhc.admin")) {
                 for (Player player : Bukkit.getOnlinePlayers()) {
                     player.setHealth(20);
                     player.setFoodLevel(20);
