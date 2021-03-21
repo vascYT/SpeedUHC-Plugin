@@ -7,11 +7,8 @@ This plugin originally meant to be for a public server. After the server gut shu
 - Start command
 - 2 Win scenarios: TNT (permission: speeduhc.tnt) and Firework (permission: speeduhc.firework)
 - Spectators
-- Instant gold/iron ore melt
-- Instant TNT blow up
-- Soup
 - Easier enchants
-- Kits (Default, Soup, Sweat, Thor, Miner)
+- Kits (Default, Soup, Thor, Miner, Bomber)
 
 ### Updating
 Replace the .jar file and delete the ``config.yml``.
