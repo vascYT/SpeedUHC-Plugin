@@ -20,7 +20,6 @@ public class healall implements CommandExecutor {
                     player.setFoodLevel(20);
                 }
                 Bukkit.getServer().broadcastMessage(var.prefix + ChatColor.GREEN + sender.getName() + " healed everyone.");
-                sender.sendMessage(var.prefix + "All players healed.");
             } else {
                 sender.sendMessage(var.prefix + ChatColor.RED + "You do not have permissions to execute that command.");
             }

@@ -41,6 +41,6 @@ public class var {
 
     public static Boolean freeze = false;
 
-    public static String version = "1.3";
+    public static String version = "1.4";
 
 }

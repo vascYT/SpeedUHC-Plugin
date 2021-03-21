@@ -1,6 +1,6 @@
 package net.banany.speeduhc.commands;
 
-import net.banany.speeduhc.functions.system;
+import net.banany.speeduhc.functions.Game;
 import net.banany.speeduhc.var;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -15,7 +15,7 @@ public class start implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("start")) {
             if (sender.hasPermission("speeduhc.start")) {
-                if (Bukkit.getOnlinePlayers().size() > 1) {
+                if (Bukkit.getOnlinePlayers().size() > 1 || (args.length == 1 && args[0].equals("confirm"))) {
                     if (var.countdownstarted) {
                         if (var.countdown <= 10) {
                             var.countdown = 50;
@@ -27,7 +27,7 @@ public class start implements CommandExecutor {
                         sender.sendMessage(var.prefix + ChatColor.RED + "The game already started.");
                     } else {
                         var.countdownstarted = true;
-                        system.run();
+                        Game.run();
                     }
                 } else {
                     sender.sendMessage(var.prefix + ChatColor.RED + "You can't start the game alone.");

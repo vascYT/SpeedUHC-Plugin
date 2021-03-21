@@ -1,21 +1,24 @@
 package net.banany.speeduhc;
 
 import net.banany.speeduhc.commands.*;
-import net.banany.speeduhc.events.JoinLeaveDeath.*;
 import net.banany.speeduhc.events.antievents.*;
 import net.banany.speeduhc.events.features.*;
-import net.banany.speeduhc.events.kits_use.onThorHammer;
-import net.banany.speeduhc.events.spectatorantievents.onChat;
-import net.banany.speeduhc.events.spectatorantievents.onItemPickup;
-import net.banany.speeduhc.events.spectatorantievents.onPVP;
-import net.banany.speeduhc.waitingitems.kits.*;
+import net.banany.speeduhc.events.onDeath;
+import net.banany.speeduhc.events.onJoin;
+import net.banany.speeduhc.events.onLeave;
+import net.banany.speeduhc.items.KitsChest;
+import net.banany.speeduhc.kits.BomberKit;
+import net.banany.speeduhc.kits.MinerKit;
+import net.banany.speeduhc.kits.SoupKit;
+import net.banany.speeduhc.kits.ThorKit;
 import org.apache.commons.io.FileUtils;
 import org.bukkit.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public final class SpeedUHC extends JavaPlugin{
@@ -24,55 +27,32 @@ public final class SpeedUHC extends JavaPlugin{
 
     @Override
     public void onEnable() {
-        // This registers all events
-        getServer().getPluginManager().registerEvents(new onJoin(), this);
-        getServer().getPluginManager().registerEvents(new net.banany.speeduhc.events.antievents.onInteract(), this);
-        getServer().getPluginManager().registerEvents(new net.banany.speeduhc.events.antievents.onDamage(), this);
-        getServer().getPluginManager().registerEvents(new onDeath(), this);
-        getServer().getPluginManager().registerEvents(new onLeave(), this);
-        getServer().getPluginManager().registerEvents(new onDrop(), this);
-        getServer().getPluginManager().registerEvents(new net.banany.speeduhc.events.antievents.onInventoryClick(), this);
-        getServer().getPluginManager().registerEvents(new InstantMelt(), this);
-        getServer().getPluginManager().registerEvents(new onThorHammer(), this);
-        getServer().getPluginManager().registerEvents(new onKitsItemUse(), this);
-        getServer().getPluginManager().registerEvents(new checkClickedItem(), this);
-        getServer().getPluginManager().registerEvents(new betterEnchant(), this);
-        getServer().getPluginManager().registerEvents(new onRain(), this);
-        getServer().getPluginManager().registerEvents(new instantTNT(), this);
-        getServer().getPluginManager().registerEvents(new net.banany.speeduhc.events.spectatorantievents.onInteract(), this);
-        getServer().getPluginManager().registerEvents(new onItemPickup(), this);
-        getServer().getPluginManager().registerEvents(new onPVP(), this);
-        getServer().getPluginManager().registerEvents(new onChat(), this);
-        getServer().getPluginManager().registerEvents(new net.banany.speeduhc.events.spectatorantievents.onDamage(), this);
-        getServer().getPluginManager().registerEvents(new onMove(), this);
-        getServer().getPluginManager().registerEvents(new onHunger(), this);
-        getServer().getPluginManager().registerEvents(new Soup(), this);
 
-        // This registers/sets the Executor for all commands
-        getCommand("start").setExecutor(new start());
-        getCommand("healall").setExecutor(new healall());
-        getCommand("setcounter").setExecutor(new setCounter());
+        registerEvents();
+        registerCommands();
 
         saveDefaultConfig();
 
         instance = this; // Get instance for the static methods
 
+        // bStats
+        Metrics metrics = new Metrics(this, 10661);
 
+        // Getting Lobby spawn and world
         var.lobbyworld = Bukkit.getWorld(this.getConfig().getString("lobby.world"));
         var.lobbyspawn = new Location(var.lobbyworld, SpeedUHC.instance.getConfig().getDouble("lobby.x"), SpeedUHC.instance.getConfig().getDouble("lobby.y"), SpeedUHC.instance.getConfig().getDouble("lobby.z"), SpeedUHC.instance.getConfig().getInt("lobby.yaw"), SpeedUHC.instance.getConfig().getInt("lobby.pitch"));
 
         // Delete old farm world
-        if (Bukkit.getWorld("farm-world") != null) {
-            Bukkit.unloadWorld("farm-world", false);
-            try {
+        try {
+            if (Files.exists(Paths.get("farm-world/"))) {
+                Bukkit.unloadWorld("farm-world", false);
                 FileUtils.deleteDirectory(new File("farm-world/"));
-            } catch (IOException e) {
-                e.printStackTrace();
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-
-        // Create new world
+        // Create new farm-world
         var.farmworld = Bukkit.createWorld(new WorldCreator("farm-world"));
 
         // Check maps
@@ -90,18 +70,55 @@ public final class SpeedUHC extends JavaPlugin{
 
     @Override
     public void onDisable() {
-        System.out.println(ConsoleColor.ANSI_RED + "[SpeedUHC] Thanks for using my Speed-UHC plugin. The plugin has been disabled." + ConsoleColor.ANSI_RESET);
+        System.out.println(ConsoleColor.ANSI_RED + "[SpeedUHC] Thanks for using my SpeedUHC plugin. The plugin has been disabled." + ConsoleColor.ANSI_RESET);
     }
 
 
-    public static Boolean isuptodate() throws IOException {
-        Scanner scanner = new Scanner(new URL("https://vasc.dev/version/speeduhc.txt").openStream(), "UTF-8");
+    void registerEvents() {
+        getServer().getPluginManager().registerEvents(new onJoin(), this);
+        getServer().getPluginManager().registerEvents(new onDeath(), this);
+        getServer().getPluginManager().registerEvents(new onLeave(), this);
+        getServer().getPluginManager().registerEvents(new onDrop(), this);
+        getServer().getPluginManager().registerEvents(new onInventoryClick(), this);
+        getServer().getPluginManager().registerEvents(new KitsChest(), this);
+        getServer().getPluginManager().registerEvents(new BetterEnchant(), this);
+        getServer().getPluginManager().registerEvents(new onRain(), this);
+        getServer().getPluginManager().registerEvents(new onInteract(), this);
+        getServer().getPluginManager().registerEvents(new onDamage(), this);
+        getServer().getPluginManager().registerEvents(new onDamage(), this);
+        getServer().getPluginManager().registerEvents(new onHunger(), this);
+        getServer().getPluginManager().registerEvents(new onMove(), this);
 
-        String urlversion = scanner.next();
+        // Spectator Events
+        getServer().getPluginManager().registerEvents(new net.banany.speeduhc.events.spectator.onItemPickup(), this);
+        getServer().getPluginManager().registerEvents(new net.banany.speeduhc.events.spectator.onPVP(), this);
+        getServer().getPluginManager().registerEvents(new net.banany.speeduhc.events.spectator.onChat(), this);
+        getServer().getPluginManager().registerEvents(new net.banany.speeduhc.events.spectator.onInteract(), this);
+        getServer().getPluginManager().registerEvents(new net.banany.speeduhc.events.spectator.onInventoryChange(), this);
 
-        scanner.close();
+        // Kits
+        getServer().getPluginManager().registerEvents(new SoupKit(), this);
+        getServer().getPluginManager().registerEvents(new ThorKit(), this);
+        getServer().getPluginManager().registerEvents(new BomberKit(), this);
+        getServer().getPluginManager().registerEvents(new MinerKit(), this);
+    }
 
-        return urlversion.equals(var.version);
+    void registerCommands() {
+        getCommand("start").setExecutor(new start());
+        getCommand("healall").setExecutor(new healall());
+        getCommand("setcounter").setExecutor(new setCounter());
+    }
+
+    public static Boolean isuptodate() {
+        try {
+            Scanner scanner = new Scanner(new URL("https://banany.net/assets/speeduhc.txt").openStream(), "UTF-8");
+            String urlversion = scanner.next();
+            scanner.close();
+
+            return urlversion.equals(var.version);
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 }

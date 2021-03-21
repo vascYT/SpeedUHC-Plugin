@@ -9,6 +9,9 @@ import org.bukkit.scoreboard.Objective;
 
 public class Scoreboard {
 
+    public static String border = "500x500";
+
+    public static String pvp = "Disabled";
 
     // This method creates and sets the the scoreboard for a player
     public static void create(Player p) {
@@ -19,26 +22,59 @@ public class Scoreboard {
 
         obj.getScore(ChatColor.YELLOW + " ").setScore(8);
         obj.getScore(ChatColor.YELLOW + "Kit").setScore(7);
-        obj.getScore(ChatColor.WHITE + "➥ Default").setScore(6);
+        obj.getScore(ChatColor.WHITE + "➥ " + var.kits.get(p)).setScore(6);
         obj.getScore(ChatColor.GRAY + " ").setScore(5);
         obj.getScore(ChatColor.YELLOW + "Border").setScore(4);
-        obj.getScore(ChatColor.WHITE + "➥ 500x500").setScore(3);
+        obj.getScore(ChatColor.WHITE + "➥ " + border).setScore(3);
         obj.getScore(ChatColor.GREEN + " ").setScore(2);
         obj.getScore(ChatColor.YELLOW + "PVP").setScore(1);
-        obj.getScore(ChatColor.WHITE + "➥ Disabled").setScore(0);
-
+        obj.getScore(ChatColor.WHITE + "➥ " + pvp).setScore(0);
 
         p.setScoreboard(scoreboard);
     }
 
-    // This method updates the scoreboard
-    public static void set(String oldscore, String newscore, int position) {
+    public static void refresh() {
         for (Player player : Bukkit.getOnlinePlayers())
         {
-            Objective obj = player.getScoreboard().getObjective("Speed UHC");
+            if (player.getScoreboard().getObjective("Speed UHC") != null) {
+                player.getScoreboard().getObjective("Speed UHC").unregister();
+            }
 
-            obj.getScoreboard().resetScores( ChatColor.WHITE +  "➥ " + oldscore);
-            obj.getScore(ChatColor.WHITE + "➥ " + newscore).setScore(position);
+            Objective obj = player.getScoreboard().registerNewObjective("Speed UHC", "dummy");
+            obj.setDisplayName(var.scoreboard_title);
+            obj.setDisplaySlot(DisplaySlot.SIDEBAR);
+
+            obj.getScore(ChatColor.YELLOW + " ").setScore(8);
+            obj.getScore(ChatColor.YELLOW + "Kit").setScore(7);
+            obj.getScore(ChatColor.WHITE + "➥ " + var.kits.get(player)).setScore(6);
+            obj.getScore(ChatColor.GRAY + " ").setScore(5);
+            obj.getScore(ChatColor.YELLOW + "Border").setScore(4);
+            obj.getScore(ChatColor.WHITE + "➥ " + border).setScore(3);
+            obj.getScore(ChatColor.GREEN + " ").setScore(2);
+            obj.getScore(ChatColor.YELLOW + "PVP").setScore(1);
+            obj.getScore(ChatColor.WHITE + "➥ " + pvp).setScore(0);
+
         }
     }
+
+    public static void refreshForPlayer(Player player) {
+        if (player.getScoreboard().getObjective("Speed UHC") != null) {
+            player.getScoreboard().getObjective("Speed UHC").unregister();
+        }
+
+        Objective obj = player.getScoreboard().registerNewObjective("Speed UHC", "dummy");
+        obj.setDisplayName(var.scoreboard_title);
+        obj.setDisplaySlot(DisplaySlot.SIDEBAR);
+
+        obj.getScore(ChatColor.YELLOW + " ").setScore(8);
+        obj.getScore(ChatColor.YELLOW + "Kit").setScore(7);
+        obj.getScore(ChatColor.WHITE + "➥ " + var.kits.get(player)).setScore(6);
+        obj.getScore(ChatColor.GRAY + " ").setScore(5);
+        obj.getScore(ChatColor.YELLOW + "Border").setScore(4);
+        obj.getScore(ChatColor.WHITE + "➥ " + border).setScore(3);
+        obj.getScore(ChatColor.GREEN + " ").setScore(2);
+        obj.getScore(ChatColor.YELLOW + "PVP").setScore(1);
+        obj.getScore(ChatColor.WHITE + "➥ " + pvp).setScore(0);
+    }
+
 }
