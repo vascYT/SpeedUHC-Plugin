@@ -1,5 +1,5 @@
 [github-latest-shield]: https://img.shields.io/github/v/release/vascYT/SpeedUHC-Plugin
-[github-download]: https://github.com/vascYT/SpeedUHC-Plugin/releases/tag/v1.4
+[github-download]: https://github.com/vascYT/SpeedUHC-Plugin/releases/
 [appveyor-build-shield]: https://img.shields.io/appveyor/build/vascYT/speeduhc-plugin
 [appveyor]: https://ci.appveyor.com/project/vascYT/speeduhc-plugin
 
