@@ -5,6 +5,7 @@
 
 [![github-latest-shield]][github-download]
 [![appveyor-build-shield]][appveyor]
+![GitHub all releases](https://img.shields.io/github/downloads/vascYT/speeduhc-plugin/total)
 
 # SpeedUHC Plugin
 
